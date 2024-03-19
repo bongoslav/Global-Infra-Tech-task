@@ -8,9 +8,9 @@ interface INews extends Document {
 }
 
 const newsSchema: Schema = new Schema({
-  title: { type: String, required: true },
-  description: { type: String, required: true },
-  text: { type: String, required: true },
+  title: { type: String, required: true, maxlength: 255 },
+  description: { type: String, required: true, maxlength: 255 },
+  text: { type: String, required: true, maxlength: 1024 * 1024 },
   date: { type: Date, default: Date.now },
 });
 
