@@ -7,7 +7,7 @@ import {
   getSingleNews,
   updateNews,
 } from "../controllers/news";
-import { validateNewsInput } from "../middleware/validation/validation";
+import { validateNewsInput } from "../middlewares/validation";
 const router = new Router({prefix: '/api'});
 
 router.post("/news", validateNewsInput, createNews);
