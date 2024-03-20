@@ -1,9 +1,19 @@
 import mongoose from "mongoose";
 require("dotenv").config();
 
-const uri = process.env.MONGO_DB_URI!;
+// const uri = process.env.MONGO_DB_URI!;
+const uri = process.env.MONGO_DB_LOCAL_URI!;
 
 mongoose.connect(uri);
-mongoose.connection.on("error", (error: Error) => {
-  console.log(error);
+const db = mongoose.connection;
+db.on("error", (error: Error) => {
+  console.log("MongoDB connection error:", error);
+});
+
+db.on("connected", () => {
+  console.log("MongoDB connected...");
+});
+
+db.once("open", () => {
+  console.log("MongoDB connection opened...");
 });

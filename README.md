@@ -24,5 +24,7 @@ TODO: finish readme
 TODO: mongodb setup
 
 ## Start
-
+brew services start mongodb-community
+docker compose build
+docker compose up
 ## Test
