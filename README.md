@@ -45,21 +45,21 @@ Follow these steps to install and run the project:
    cd Global-Infra-Tech-task
    ```
 
-3. If using Docker:
+* If using Docker:
 
    - Build the Docker images:
 
      ```bash
-     docker-compose build
+     docker compose build
      ```
 
    - Start the Docker containers:
 
      ```bash
-     docker-compose up
+     docker compose up
      ```
 
-4. If not using Docker:
+* If not using Docker:
 
    - Install project dependencies:
 
@@ -86,7 +86,7 @@ Once the application is running, you can access it on [http://localhost:3000/api
 | GET    | `/news`     |                                                                            | `[ { "title": string, "description": string, "text": string, "date": Date, "_id": string, "__v": number }, ... ]` |
 | PATCH  | `/news/:id` | `{ "title": string, "description": string, "text": string, "date": Date }` | `{ "title": string, "description": string, "text": string, "date": Date, "_id": string, "__v": number }`          |
 | DELETE | `/news/:id` |                                                                            | `{ "message": "News item deleted successfully" }`                                                                 |
-| DELETE | `/news`     | `{ "newsIds": [string] }`                                                  | `{ "message": "News items deleted successfully" }`                                                                |
+| DELETE | `/news`     | `{ "newsIds": [string] }`                                                  | `{ "message": "All news items deleted successfully" }`                                                                |
 
 ## Validation
 
@@ -100,8 +100,6 @@ The `validateNewsInput` middleware function is used to validate input data for t
 - `date`: Optional, must be in ISO 8601 date format.
 
 If the input data does not meet these requirements, the middleware returns a 400 Bad Request status along with detailed error messages explaining the validation failures.
-
-## Testing
 
 ## Configuration
 
