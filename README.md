@@ -47,16 +47,10 @@ Follow these steps to install and run the project:
 
 - If using Docker:
 
-  - Build the Docker images:
+  - Build and start the Docker containers:
 
     ```bash
-    docker compose build
-    ```
-
-  - Start the Docker containers:
-
-    ```bash
-    docker compose up
+    docker compose up --build
     ```
 
 - If not using Docker:
@@ -72,10 +66,14 @@ Follow these steps to install and run the project:
     ```bash
     npm start
     ```
+  - Application can be started in dev mode watching for changes
+    ```bash
+    npm run dev
+    ``` 
 
 ## Usage
 
-Once the application is running, you can access it on [http://localhost:3000/api/](http://localhost:3000) (default port is set to 3000).
+Once the application is running, you can access it on [http://localhost:3000/api/](http://localhost:3000/api/) (default port is set to 3000).
 
 ## Endpoints
 
