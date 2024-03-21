@@ -18,11 +18,14 @@ beforeAll(async () => {
   mongoServer = await MongoMemoryServer.create();
   const mongoUri = mongoServer.getUri();
   await mongoose.connect(mongoUri);
+  // suppress console.errors while running the tests
+  jest.spyOn(console, "error").mockImplementation(() => {});
 });
 
 afterAll(async () => {
   await mongoose.disconnect();
   await mongoServer.stop();
+  jest.restoreAllMocks();
 });
 
 beforeEach(async () => {

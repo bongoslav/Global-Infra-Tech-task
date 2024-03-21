@@ -4,7 +4,7 @@ require("dotenv").config();
 let uri = process.env.MONGO_DB_LOCAL_URI!;
 
 if (process.env.NODE_ENV === "test") {
-  uri = process.env.TEST_MONGO_DB_LOCAL_URI!;
+  uri = process.env.TEST_MONGO_DB_LOCAL_URI as string;
 }
 
 const connectDB = async () => {
