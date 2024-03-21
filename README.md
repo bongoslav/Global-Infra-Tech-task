@@ -61,15 +61,22 @@ Follow these steps to install and run the project:
     npm install
     ```
 
+  - Build the application:
+
+    ```bash
+    npm run build
+    ```
+
   - Start the application:
 
     ```bash
     npm start
     ```
+
   - Application can be started in dev mode watching for changes
     ```bash
     npm run dev
-    ``` 
+    ```
 
 ## Usage
 
@@ -90,7 +97,7 @@ Once the application is running, you can access it on [http://localhost:3000/api
 
 ### Input Validation Middleware
 
-The `validateNewsInput` middleware function is used to validate input data for the API endpoints related to news creation and updating. It enforces the following validation rules:
+There are two middlewares that validate user input. `validateRequiredNewsInput` for the `POST` request with all fields except `date` required and `validatePatchNewsInput` used for partial update of news (`PATCH`) where all fields are optional. The following rules are enforced for validation:
 
 - `title`: Required, maximum length of 255 characters.
 - `description`: Required, maximum length of 255 characters.
@@ -101,7 +108,7 @@ If the input data does not meet these requirements, the middleware returns a 400
 
 ## Configuration
 
-The application is already configured using environment variables. This is done so it easy easier to "plug & play" the api and there is no sensitive info in the `.env` file.
+The application is already configured using environment variables. This is done so it's easier to "plug & play" the api and there is no sensitive info in the `.env` file as well.
 
 ## Tests
 
