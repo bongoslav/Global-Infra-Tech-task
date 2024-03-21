@@ -1,14 +1,19 @@
 import mongoose from "mongoose";
 require("dotenv").config();
 
-const uri = process.env.MONGO_DB_LOCAL_URI!;
+let uri = process.env.MONGO_DB_LOCAL_URI!;
 
-mongoose.connect(uri);
-const db = mongoose.connection;
-db.on("error", (error: Error) => {
-  console.log("❌ MongoDB connection error:", error);
-});
+if (process.env.NODE_ENV === "test") {
+  uri = process.env.TEST_MONGO_DB_LOCAL_URI!;
+}
 
-db.on("connected", () => {
-  console.log("🔌 MongoDB connected...");
-});
+const connectDB = async () => {
+  try {
+    const db = await mongoose.connect(uri);
+    console.log("🔌 MongoDB connected...");
+  } catch (error) {
+    console.error("❌ MongoDB connection error:", error);
+  }
+};
+
+export default connectDB;
