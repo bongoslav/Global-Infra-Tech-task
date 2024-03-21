@@ -22,7 +22,7 @@ services:
     environment:
       NODE_ENV: development
       PORT: 3000
-      MONGO_DB_LOCAL_URI: mongodb://mongo_db:27017
+      MONGO_DB_LOCAL_URI: mongodb://mongo_db:27017/newsRestApi
       DB_NAME: newsRestApi
     depends_on:
       - mongo_db
