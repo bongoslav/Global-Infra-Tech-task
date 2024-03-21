@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a task from Global Infra Tech for a simple REST API for news. It can be run locally using either Docker or directly with Node.js. The app is built with **Typescript**, **Koa**, **MongoDB** & **Docker**. There is also logging with **winston** and proper validation with **Joi**.
+This project is a task from Global Infra Tech for a simple REST API for news. It can be run locally using either Docker or directly with Node.js. The app is built with **Typescript**, **Koa**, **MongoDB** & **Docker**. **Jest** with **Supertest** for testing. There is also logging with **winston** and proper validation with **Joi**.
 
 ## Task description
 
@@ -85,8 +85,8 @@ Once the application is running, you can access it on [http://localhost:3000/api
 | GET    | `/news/:id` |                                                                            | `{ "title": string, "description": string, "text": string, "date": Date, "_id": string, "__v": number }`          |
 | GET    | `/news`     |                                                                            | `[ { "title": string, "description": string, "text": string, "date": Date, "_id": string, "__v": number }, ... ]` |
 | PATCH  | `/news/:id` | `{ "title": string, "description": string, "text": string, "date": Date }` | `{ "title": string, "description": string, "text": string, "date": Date, "_id": string, "__v": number }`          |
-| DELETE | `/news/:id` |                                                                            | `{ "message": "News deleted successfully" }`                                                                 |
-| DELETE | `/news`     | `{ "newsIds": [string] }`                                                  | `{ "message": "All news deleted successfully" }`                                                            |
+| DELETE | `/news/:id` |                                                                            | `{ "message": "News deleted successfully" }`                                                                      |
+| DELETE | `/news`     | `{ "newsIds": [string] }`                                                  | `{ "message": "All news deleted successfully" }`                                                                  |
 
 ## Validation
 
@@ -104,6 +104,34 @@ If the input data does not meet these requirements, the middleware returns a 400
 ## Configuration
 
 The application is already configured using environment variables. This is done so it easy easier to "plug & play" the api and there is no sensitive info in the `.env` file.
+
+## Tests
+
+To run the tests:
+
+```bash
+npm test
+```
+
+To see test coverage:
+
+```bash
+npx jest --coverage
+```
+
+Currently the routes and controllers have 100% test coverage:
+
+```bash
+npx jest --coverage --collectCoverageFrom=src/controllers/news.ts --collectCoverageFrom=src/routes/news.ts
+```
+
+| File        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s |
+| ----------- | ------- | -------- | ------- | ------- | ----------------- |
+| All files   | 100     | 100      | 100     | 100     |
+| controllers | 100     | 100      | 100     | 100     |
+| news.ts     | 100     | 100      | 100     | 100     |
+| routes      | 100     | 100      | 100     | 100     |
+| news.ts     | 100     | 100      | 100     | 100     |
 
 ## License
 
