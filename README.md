@@ -45,33 +45,33 @@ Follow these steps to install and run the project:
    cd Global-Infra-Tech-task
    ```
 
-* If using Docker:
+- If using Docker:
 
-   - Build the Docker images:
+  - Build the Docker images:
 
-     ```bash
-     docker compose build
-     ```
+    ```bash
+    docker compose build
+    ```
 
-   - Start the Docker containers:
+  - Start the Docker containers:
 
-     ```bash
-     docker compose up
-     ```
+    ```bash
+    docker compose up
+    ```
 
-* If not using Docker:
+- If not using Docker:
 
-   - Install project dependencies:
+  - Install project dependencies:
 
-     ```bash
-     npm install
-     ```
+    ```bash
+    npm install
+    ```
 
-   - Start the application:
+  - Start the application:
 
-     ```bash
-     npm start
-     ```
+    ```bash
+    npm start
+    ```
 
 ## Usage
 
@@ -85,8 +85,8 @@ Once the application is running, you can access it on [http://localhost:3000/api
 | GET    | `/news/:id` |                                                                            | `{ "title": string, "description": string, "text": string, "date": Date, "_id": string, "__v": number }`          |
 | GET    | `/news`     |                                                                            | `[ { "title": string, "description": string, "text": string, "date": Date, "_id": string, "__v": number }, ... ]` |
 | PATCH  | `/news/:id` | `{ "title": string, "description": string, "text": string, "date": Date }` | `{ "title": string, "description": string, "text": string, "date": Date, "_id": string, "__v": number }`          |
-| DELETE | `/news/:id` |                                                                            | `{ "message": "News item deleted successfully" }`                                                                 |
-| DELETE | `/news`     | `{ "newsIds": [string] }`                                                  | `{ "message": "All news items deleted successfully" }`                                                                |
+| DELETE | `/news/:id` |                                                                            | `{ "message": "News deleted successfully" }`                                                                 |
+| DELETE | `/news`     | `{ "newsIds": [string] }`                                                  | `{ "message": "All news deleted successfully" }`                                                            |
 
 ## Validation
 

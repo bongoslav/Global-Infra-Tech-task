@@ -141,7 +141,7 @@ async function deleteSingleNews(ctx: Context) {
   }
 
   ctx.status = 200;
-  ctx.body = { message: "News item deleted successfully" };
+  ctx.body = { message: "News deleted successfully" };
 }
 
 async function deleteMultipleNews(ctx: Context) {

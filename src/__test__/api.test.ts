@@ -327,7 +327,7 @@ describe("DELETE /api/news/:id", () => {
     const response = await request.delete(`/api/news/${newsId}`);
 
     expect(response.status).toBe(200);
-    expect(response.body.message).toBe("News item deleted successfully");
+    expect(response.body.message).toBe("News deleted successfully");
     const newsCount = await News.countDocuments();
     expect(newsCount).toBe(0);
   });
