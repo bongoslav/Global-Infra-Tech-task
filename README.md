@@ -47,10 +47,16 @@ Follow these steps to install and run the project:
 
 - If using Docker:
 
-  - Build and start the Docker containers:
+  - Build the Docker containers:
 
     ```bash
-    docker compose up --build
+    docker compose build
+    ```
+
+  - Start the Docker containers:
+
+    ```bash
+    docker compose up
     ```
 
 - If not using Docker:
