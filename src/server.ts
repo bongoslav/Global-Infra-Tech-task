@@ -8,7 +8,9 @@ require("dotenv").config();
 const app = new Koa();
 
 app.use(bodyParser());
-app.use(requestLogger);
+if (process.env.NODE_ENV === "development") {
+  app.use(requestLogger);
+}
 
 app.use(newsRoutes.routes());
 app.use(async (ctx: Context, next) => {
