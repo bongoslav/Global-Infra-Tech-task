@@ -80,9 +80,16 @@ Follow these steps to install and run the project:
     ```
 
   - Application can be started in dev mode watching for changes
+
     ```bash
     npm run dev
     ```
+
+- Test if application is running
+
+  ```bash
+  curl -X GET http://localhost:3000/api/news
+  ```
 
 ## Usage
 
@@ -98,6 +105,35 @@ Once the application is running, you can access it on [http://localhost:3000/api
 | PATCH  | `/news/:id` | `{ "title": string, "description": string, "text": string, "date": Date }` | `{ "title": string, "description": string, "text": string, "date": Date, "_id": string, "__v": number }`          |
 | DELETE | `/news/:id` |                                                                            | `{ "message": "News deleted successfully" }`                                                                      |
 | DELETE | `/news`     | `{ "newsIds": [string] }`                                                  | `{ "message": "All news deleted successfully" }`                                                                  |
+
+## Filtering & Sorting
+
+The API supports filtering and sorting of news articles based on certain criteria.
+
+### Filtering
+
+You can filter news articles by specifying one or more of the following query parameters:
+
+- `date`: Filter news articles by a specific date. The date should be provided in ISO 8601 format (e.g., `2024-03-20`).
+- `title`: Filter news articles by a specific title. The title should be provided as a string.
+
+### Sorting
+
+You can sort news articles by date and/or title in ascending or descending order by specifying the following query parameters:
+
+- `sortBy`: Sort news articles by either `date` or `title`.
+- `orderBy`: Specify the order of sorting. Use `asc` for ascending order or `desc` for descending order.
+
+When `sortBy` is specified, `orderBy` should be specified as well in order to sort the results.
+
+#### Example Usage
+
+To filter and/or sort news articles, make a GET request to the `/news` endpoint with the desired query parameters:
+
+- Filter news articles by date: `/news?date=2024-03-20`
+- Filter news articles by title: `/news?title=Example%20Title`
+- Sort news articles by date in ascending order: `/news?sortBy=date&orderBy=asc`
+- Sort news articles by title in descending order: `/news?sortBy=title&orderBy=desc`
 
 ## Validation
 
