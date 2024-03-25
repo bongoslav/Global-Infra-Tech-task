@@ -36,13 +36,13 @@ Follow these steps to install and run the project:
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/bongoslav/interview-rest-api.git
+   git clone https://github.com/bongoslav/news-rest-api.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd interview-rest-api
+   cd news-rest-api
    ```
 
 - If using Docker:
