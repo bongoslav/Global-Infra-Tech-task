@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a task from Global Infra Tech for a simple REST API for news. It can be run locally using either Docker or directly with Node.js. The app is built with **Typescript**, **Koa**, **MongoDB** & **Docker**. **Jest** with **Supertest** for testing. There is also logging with **winston** and proper validation with **Joi**.
+This project is a task for a simple REST API for news. It can be run locally using either Docker or directly with Node.js. The app is built with **Typescript**, **Koa**, **MongoDB** & **Docker**. **Jest** with **Supertest** for testing. There is also logging with **winston** and proper validation with **Joi**.
 
 ## Task description
 
@@ -36,13 +36,13 @@ Follow these steps to install and run the project:
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/bongoslav/Global-Infra-Tech-task.git
+   git clone https://github.com/bongoslav/interview-rest-api.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd Global-Infra-Tech-task
+   cd interview-rest-api
    ```
 
 - If using Docker:
